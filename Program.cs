@@ -10,7 +10,7 @@ namespace ConsoleAppCyclesWithIncrements
     {
         static void Main(string[] args)
         {
-            Console.Write("Введите номер задачи");
+            Console.Write("Введите номер задачи: ");
             string s = Console.ReadLine();
             bool variable = int.TryParse(s,out int result);
             try 
@@ -19,10 +19,16 @@ namespace ConsoleAppCyclesWithIncrements
                 {
                     FirstAppTask();
                 }
+                if (result == 2)
+                {
+                    SecondAppTask(); 
+                    
+                }
             }
             catch (Exception ex) 
             {
                 throw ex;
+                    
             }
             Console.ReadLine();
         }
@@ -48,6 +54,37 @@ namespace ConsoleAppCyclesWithIncrements
                 
             }
             Console.WriteLine(increment);
+        }
+
+        /// <summary>
+        /// Определить количество трехзначных натуральных чисел, сумма цифр которых равна заданному числу N.
+        /// </summary>
+        static void SecondAppTask() 
+        {
+            Console.Write("Введите число: ");
+            int number=Convert.ToInt32(Console.ReadLine());
+
+            int increment = 0;
+            for (int i = 100; i < 1000; i++)
+            {
+                int iOne, iSecond, iThree;
+
+                iOne = i / 100;
+                iSecond = i / 10;
+                iSecond %= 10;
+                iThree = i % 10;
+
+                int sum=iOne+iSecond+iThree;
+
+                if (sum==number)
+                {
+                    increment++;
+                }
+            }
+            Console.WriteLine(increment);
+
+
+
         }
     }
 }
