@@ -21,8 +21,11 @@ namespace ConsoleAppCyclesWithIncrements
                 }
                 if (result == 2)
                 {
-                    SecondAppTask(); 
-                    
+                    SecondAppTask();                     
+                }
+                if(result == 3) 
+                {
+                    ThreeAppTask();
                 }
             }
             catch (Exception ex) 
@@ -85,6 +88,20 @@ namespace ConsoleAppCyclesWithIncrements
 
 
 
+        }
+
+        /// <summary>
+        /// Составить программу вычисления суммы кубов чисел от 25 до 125. 
+        /// </summary>
+        static void ThreeAppTask()
+        {
+            double result = 0;
+
+            for (double i = 25; i <= 125; i++)
+            {
+                result += Math.Pow(i, 3);
+            }
+            Console.WriteLine(result);
         }
     }
 }
