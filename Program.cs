@@ -27,6 +27,10 @@ namespace ConsoleAppCyclesWithIncrements
                 {
                     ThreeAppTask();
                 }
+                if (result == 4)
+                {
+                    FourAppTask();
+                }
             }
             catch (Exception ex) 
             {
@@ -102,6 +106,25 @@ namespace ConsoleAppCyclesWithIncrements
                 result += Math.Pow(i, 3);
             }
             Console.WriteLine(result);
+        }
+
+        /// <summary>
+        /// Среди двузначных чисел найти те, сумма квадратов цифр которых делится на 13. 
+        /// </summary>
+        static void FourAppTask()
+        {
+            double result = 0;
+            
+            for (double i = 13; i <= 99; i++)
+            {
+                result += Math.Pow(i, 2);
+
+                if (result%13==0)
+                {
+                    Console.WriteLine(result);
+                }                
+            }
+            
         }
     }
 }
