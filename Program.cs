@@ -10,7 +10,7 @@ namespace ConsoleAppCyclesWithIncrements
     {
         static void Main(string[] args)
         {
-            Console.Write("Введите номер задачи");
+            Console.Write("Введите номер задачи: ");
             string s = Console.ReadLine();
             bool variable = int.TryParse(s,out int result);
             try 
@@ -19,10 +19,31 @@ namespace ConsoleAppCyclesWithIncrements
                 {
                     FirstAppTask();
                 }
+                if (result == 2)
+                {
+                    SecondAppTask();
+                }
+                if (result == 3)
+                {
+                    ThreeAppTask();
+                }
+                if (result == 4)
+                {
+                    FourAppTask();
+                }
+                if (result == 5)
+                {
+                    FiveAppTask();
+                }
+                if (result == 6)
+                {
+                    SixAppTask();
+                }
             }
             catch (Exception ex) 
             {
                 throw ex;
+                    
             }
             Console.ReadLine();
         }
@@ -48,6 +69,100 @@ namespace ConsoleAppCyclesWithIncrements
                 
             }
             Console.WriteLine(increment);
+        }
+
+        /// <summary>
+        /// Определить количество трехзначных натуральных чисел, сумма цифр которых равна заданному числу N.
+        /// </summary>
+        static void SecondAppTask() 
+        {
+            Console.Write("Введите число: ");
+            int number=Convert.ToInt32(Console.ReadLine());
+
+            int increment = 0;
+            for (int i = 100; i < 1000; i++)
+            {
+                int iOne, iSecond, iThree;
+
+                iOne = i / 100;
+                iSecond = i / 10;
+                iSecond %= 10;
+                iThree = i % 10;
+
+                int sum=iOne+iSecond+iThree;
+
+                if (sum==number)
+                {
+                    increment++;
+                }
+            }
+            Console.WriteLine(increment);
+
+
+
+        }
+
+        /// <summary>
+        /// Составить программу вычисления суммы кубов чисел от 25 до 125. 
+        /// </summary>
+        static void ThreeAppTask()
+        {
+            double result = 0;
+
+            for (double i = 25; i <= 125; i++)
+            {
+                result += Math.Pow(i, 3);
+            }
+            Console.WriteLine(result);
+        }
+
+        /// <summary>
+        /// Среди двузначных чисел найти те, сумма квадратов цифр которых делится на 13. 
+        /// </summary>
+        static void FourAppTask()
+        {
+            double result = 0;
+
+            for (double i = 13; i <= 99; i++)
+            {
+                result += Math.Pow(i, 2);
+
+                if (result%13==0)
+                {
+                    Console.WriteLine(result);
+                }                
+            }
+            
+        }
+
+        /// Написать программу поиска двузначных чисел, таких, что если к сумме цифр этого числа прибавить
+        /// квадрат этой суммы, то получится это число.
+        static void FiveAppTask()
+        {
+            for (int i = 10; i <= 99; i++)
+            {
+                int iOne = i / 10;
+                int iTwo = i % 10;
+                int iSum=iOne+iTwo;
+                double iPow = Math.Pow(iSum, 2);
+
+                if (i==iPow+iSum)
+                {
+                    Console.WriteLine(i);
+                }
+            }
+
+        }
+
+        /// <summary>
+        /// Квадрат трехзначного числа оканчивается тремя цифрами, которые как раз и составляют это число
+        /// </summary>
+        static void SixAppTask()
+        {
+            for (int i = 100; i <= 999; i++)
+            {
+
+            }
         }
     }
 }
