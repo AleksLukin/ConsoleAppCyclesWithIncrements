@@ -21,15 +21,23 @@ namespace ConsoleAppCyclesWithIncrements
                 }
                 if (result == 2)
                 {
-                    SecondAppTask();                     
+                    SecondAppTask();
                 }
-                if(result == 3) 
+                if (result == 3)
                 {
                     ThreeAppTask();
                 }
                 if (result == 4)
                 {
                     FourAppTask();
+                }
+                if (result == 5)
+                {
+                    FiveAppTask();
+                }
+                if (result == 6)
+                {
+                    SixAppTask();
                 }
             }
             catch (Exception ex) 
@@ -114,7 +122,7 @@ namespace ConsoleAppCyclesWithIncrements
         static void FourAppTask()
         {
             double result = 0;
-            
+
             for (double i = 13; i <= 99; i++)
             {
                 result += Math.Pow(i, 2);
@@ -125,6 +133,36 @@ namespace ConsoleAppCyclesWithIncrements
                 }                
             }
             
+        }
+
+        /// Написать программу поиска двузначных чисел, таких, что если к сумме цифр этого числа прибавить
+        /// квадрат этой суммы, то получится это число.
+        static void FiveAppTask()
+        {
+            for (int i = 10; i <= 99; i++)
+            {
+                int iOne = i / 10;
+                int iTwo = i % 10;
+                int iSum=iOne+iTwo;
+                double iPow = Math.Pow(iSum, 2);
+
+                if (i==iPow+iSum)
+                {
+                    Console.WriteLine(i);
+                }
+            }
+
+        }
+
+        /// <summary>
+        /// Квадрат трехзначного числа оканчивается тремя цифрами, которые как раз и составляют это число
+        /// </summary>
+        static void SixAppTask()
+        {
+            for (int i = 100; i <= 999; i++)
+            {
+
+            }
         }
     }
 }
