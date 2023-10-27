@@ -161,7 +161,25 @@ namespace ConsoleAppCyclesWithIncrements
         {
             for (int i = 100; i <= 999; i++)
             {
+                double number = Math.Pow(i, 2);
 
+                int result = Convert.ToInt32(number / 100);
+
+                int resultOne, resultTwo, resultThree;
+
+                resultOne = Convert.ToInt32(result / 100);
+
+                resultTwo = result / 10;
+                resultTwo%=10;
+
+                resultThree = Convert.ToInt32(result% 10);
+
+                int score = resultOne * 100 + resultTwo * 10 + resultThree;
+
+                if (score==i)
+                {
+                    Console.WriteLine(score);
+                }
             }
         }
     }
