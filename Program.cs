@@ -13,9 +13,9 @@ namespace ConsoleAppCyclesWithIncrements
             Console.Write("Введите номер задачи: ");
             string s = Console.ReadLine();
             bool variable = int.TryParse(s,out int result);
-            try 
+            if (variable == true)
             {
-                if (result==1)
+                if (result == 1)
                 {
                     FirstAppTask();
                 }
@@ -39,11 +39,14 @@ namespace ConsoleAppCyclesWithIncrements
                 {
                     SixAppTask();
                 }
+                if (result == 7)
+                {
+                    SevenAppTask();
+                }
             }
-            catch (Exception ex) 
+            else
             {
-                throw ex;
-                    
+                Console.WriteLine("Номер задачи не введен!"); 
             }
             Console.ReadLine();
         }
@@ -76,7 +79,6 @@ namespace ConsoleAppCyclesWithIncrements
         /// </summary>
         static void SecondAppTask() 
         {
-            Console.Write("Введите число: ");
             int number=Convert.ToInt32(Console.ReadLine());
 
             int increment = 0;
@@ -180,6 +182,31 @@ namespace ConsoleAppCyclesWithIncrements
                 {
                     Console.WriteLine(score);
                 }
+            }
+        }
+
+        /// <summary>
+        /// Составьте поле для игры в морской бой.
+        /// </summary>
+        static void SevenAppTask()
+        {
+            int area = 0;
+
+            for (int i = 0; i <= 10; i++)
+            {
+                for (int j = 0; j <= 10; j++)
+                {
+                    if (area%2==0)
+                    {
+                        Console.Write(0);
+                    }
+                    else
+                    {
+                        Console.Write("X");
+                    }
+                    area++;
+                }
+                Console.WriteLine(0);
             }
         }
     }
