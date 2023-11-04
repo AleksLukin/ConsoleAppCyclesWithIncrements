@@ -43,6 +43,10 @@ namespace ConsoleAppCyclesWithIncrements
                 {
                     SevenAppTask();
                 }
+                if (result == 8)
+                {
+                    EightAppTask();
+                }
             }
             else
             {
@@ -190,16 +194,10 @@ namespace ConsoleAppCyclesWithIncrements
         /// </summary>
         static void SevenAppTask()
         {
-            for (int i = 0; i <=9; i++)
-            {
-                for (int j = 0; j <=9; j++)
-                {
-                    OneArea();
-                    TwoArea();
-                    //ThirdArea();
-                    //FourArea();
-                }
-            }
+            OneArea();
+            TwoArea();
+            ThirdArea();
+            FourArea();      
         }
         /// <summary>
         /// Прорисовка одноклеточных кораблей
@@ -218,49 +216,9 @@ namespace ConsoleAppCyclesWithIncrements
                     {
                         Console.Write(" 1");
                     }
-                    else if (j == 8 && i == 2)
-                    {
-                        Console.Write(" 2");
-                        Console.Write(" 2");
-                        j++;
-                    }
-                    else if (j == 0 && i == 0)
-                    {
-                        Console.Write(" 3");
-                        Console.Write(" 3");
-                        Console.Write(" 3");
-                        j += 2;
-                    }
-                    else if (j == 2 && i == 3)
-                    {
-                        Console.Write(" 4");
-                        Console.Write(" 4");
-                        Console.Write(" 4");
-                        Console.Write(" 4");
-                        j += 3;
-                    }
-                    else if (j == 6 && i == 9)
-                    {
-                        Console.Write(" 3");
-                        Console.Write(" 3");
-                        Console.Write(" 3");
-                        j += 2;
-                    }
-                    else if (j == 1 && i == 5)
-                    {
-                        Console.Write(" 2");
-                        Console.Write(" 2");
-                        j++;
-                    }
                     else if (j == 4 && i == 6)
                     {
                         Console.Write(" 1");
-                    }
-                    else if (j == 7 && i == 7)
-                    {
-                        Console.Write(" 2");
-                        Console.Write(" 2");
-                        j++;
                     }
                     else if (j == 9 && i == 5)
                     {
@@ -275,13 +233,110 @@ namespace ConsoleAppCyclesWithIncrements
             }
         }
         /// <summary>
-        /// Прорисовка двуклеточных кораблей
+        /// Прорисовка двухклеточных кораблей
         /// </summary>
         private static void TwoArea()
         {
+            for (int i = 0; i <= 9; i++)
+            {
+                for (int j = 0; j <= 9; j++)
+                {
+                    if (j == 7 && i == 7)
+                    {
+                        Console.Write(" 2");
+                        Console.Write(" 2");
+                        j++;
+                    }
+                    else if (j == 1 && i == 5)
+                    {
+                        Console.Write(" 2");
+                        Console.Write(" 2");
+                        j++;
+                    }
+                    else if (j == 8 && i == 2)
+                    {
+                        Console.Write(" 2");
+                        Console.Write(" 2");
+                        j++;
+                    }
 
+                    else
+                    {
+                        Console.Write(" X");
+                    }
+                }
+            }            
+        }
+        /// <summary>
+        /// Прорисовка трехклеточных кораблей
+        /// </summary>
+        private static void ThirdArea()
+        {
+            for (int i = 0; i <= 9; i++)
+            {
+                for (int j = 0; j <= 9; j++)
+                {
+                    if (j == 6 && i == 9)
+                    {
+                        Console.Write(" 3");
+                        Console.Write(" 3");
+                        Console.Write(" 3");
+                        j += 2;
+                    }
+                    else if (j == 0 && i == 0)
+                    {
+                        Console.Write(" 3");
+                        Console.Write(" 3");
+                        Console.Write(" 3");
+                        j += 2;
+                    }
+                    else
+                    {
+                        Console.Write(" X");
+                    }
+                }
+            }
+        }
+        /// <summary>
+        /// Прорисовка четырехклеточных кораблей
+        /// </summary>
+        private static void FourArea()
+        {
+            for (int i = 0; i <= 9; i++)
+            {
+                for (int j = 0; j <= 9; j++)
+                {
+
+                    if (j == 2 && i == 3)
+                    {
+                        Console.Write(" 4");
+                        Console.Write(" 4");
+                        Console.Write(" 4");
+                        Console.Write(" 4");
+                        j += 3;
+                    }
+                    else
+                    {
+                        Console.Write(" X");
+                    }
+                }
+            }
         }
 
+        /// <summary>
+        /// Написать программу поиска четырехзначного числа, которое при делении на 133 дает в остатке 125, 
+        /// а при делении на 134 дает в остатке 111. Ответ: 1987. 
+        /// </summary>
+        static void EightAppTask()
+        {
+            for (int i = 1000; i < 10000; i++)
+            {
+                if (i % 133 == 125 && i % 134 == 111)
+                {
+                    Console.WriteLine(i);
+                }
+            }
+        }
+        
     }
 }
- 
