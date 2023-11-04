@@ -10,19 +10,47 @@ namespace ConsoleAppCyclesWithIncrements
     {
         static void Main(string[] args)
         {
-            Console.Write("Введите номер задачи");
+            Console.Write("Введите номер задачи: ");
             string s = Console.ReadLine();
             bool variable = int.TryParse(s,out int result);
-            try 
+            if (variable == true)
             {
-                if (result==1)
+                if (result == 1)
                 {
                     FirstAppTask();
                 }
+                if (result == 2)
+                {
+                    SecondAppTask();
+                }
+                if (result == 3)
+                {
+                    ThreeAppTask();
+                }
+                if (result == 4)
+                {
+                    FourAppTask();
+                }
+                if (result == 5)
+                {
+                    FiveAppTask();
+                }
+                if (result == 6)
+                {
+                    SixAppTask();
+                }
+                if (result == 7)
+                {
+                    SevenAppTask();
+                }
+                if (result == 8)
+                {
+                    EightAppTask();
+                }
             }
-            catch (Exception ex) 
+            else
             {
-                throw ex;
+                Console.WriteLine("Номер задачи не введен!"); 
             }
             Console.ReadLine();
         }
@@ -49,6 +77,266 @@ namespace ConsoleAppCyclesWithIncrements
             }
             Console.WriteLine(increment);
         }
+
+        /// <summary>
+        /// Определить количество трехзначных натуральных чисел, сумма цифр которых равна заданному числу N.
+        /// </summary>
+        static void SecondAppTask() 
+        {
+            int number=Convert.ToInt32(Console.ReadLine());
+
+            int increment = 0;
+            for (int i = 100; i < 1000; i++)
+            {
+                int iOne, iSecond, iThree;
+
+                iOne = i / 100;
+                iSecond = i / 10;
+                iSecond %= 10;
+                iThree = i % 10;
+
+                int sum=iOne+iSecond+iThree;
+
+                if (sum==number)
+                {
+                    increment++;
+                }
+            }
+            Console.WriteLine(increment);
+
+
+
+        }
+
+        /// <summary>
+        /// Составить программу вычисления суммы кубов чисел от 25 до 125. 
+        /// </summary>
+        static void ThreeAppTask()
+        {
+            double result = 0;
+
+            for (double i = 25; i <= 125; i++)
+            {
+                result += Math.Pow(i, 3);
+            }
+            Console.WriteLine(result);
+        }
+
+        /// <summary>
+        /// Среди двузначных чисел найти те, сумма квадратов цифр которых делится на 13. 
+        /// </summary>
+        static void FourAppTask()
+        {
+            double result = 0;
+
+            for (double i = 13; i <= 99; i++)
+            {
+                result += Math.Pow(i, 2);
+
+                if (result%13==0)
+                {
+                    Console.WriteLine(result);
+                }                
+            }
+            
+        }
+
+        /// Написать программу поиска двузначных чисел, таких, что если к сумме цифр этого числа прибавить
+        /// квадрат этой суммы, то получится это число.
+        static void FiveAppTask()
+        {
+            for (int i = 10; i <= 99; i++)
+            {
+                int iOne = i / 10;
+                int iTwo = i % 10;
+                int iSum=iOne+iTwo;
+                double iPow = Math.Pow(iSum, 2);
+
+                if (i==iPow+iSum)
+                {
+                    Console.WriteLine(i);
+                }
+            }
+
+        }
+
+        /// <summary>
+        /// Квадрат трехзначного числа оканчивается тремя цифрами, которые как раз и составляют это число
+        /// </summary>
+        static void SixAppTask()
+        {
+            for (int i = 100; i <= 999; i++)
+            {
+                double number = Math.Pow(i, 2);
+
+                int result = Convert.ToInt32(number / 100);
+
+                int resultOne, resultTwo, resultThree;
+
+                resultOne = Convert.ToInt32(result / 100);
+
+                resultTwo = result / 10;
+                resultTwo%=10;
+
+                resultThree = Convert.ToInt32(result% 10);
+
+                int score = resultOne * 100 + resultTwo * 10 + resultThree;
+
+                if (score==i)
+                {
+                    Console.WriteLine(score);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Составьте поле для игры в морской бой.
+        /// </summary>
+        static void SevenAppTask()
+        {
+            OneArea();
+            TwoArea();
+            ThirdArea();
+            FourArea();      
+        }
+        /// <summary>
+        /// Прорисовка одноклеточных кораблей
+        /// </summary>
+        private static void OneArea()
+        {
+            for (int i = 0; i <= 9; i++)
+            {
+                for (int j = 0; j <= 9; j++)
+                {
+                    if (j == 7 && i == 4)
+                    {
+                        Console.Write(" 1");
+                    }
+                    else if (j == 0 && i == 9)
+                    {
+                        Console.Write(" 1");
+                    }
+                    else if (j == 4 && i == 6)
+                    {
+                        Console.Write(" 1");
+                    }
+                    else if (j == 9 && i == 5)
+                    {
+                        Console.Write(" 1");
+                    }
+                    else
+                    {
+                        Console.Write(" X");
+                    }
+                }
+                Console.WriteLine();
+            }
+        }
+        /// <summary>
+        /// Прорисовка двухклеточных кораблей
+        /// </summary>
+        private static void TwoArea()
+        {
+            for (int i = 0; i <= 9; i++)
+            {
+                for (int j = 0; j <= 9; j++)
+                {
+                    if (j == 7 && i == 7)
+                    {
+                        Console.Write(" 2");
+                        Console.Write(" 2");
+                        j++;
+                    }
+                    else if (j == 1 && i == 5)
+                    {
+                        Console.Write(" 2");
+                        Console.Write(" 2");
+                        j++;
+                    }
+                    else if (j == 8 && i == 2)
+                    {
+                        Console.Write(" 2");
+                        Console.Write(" 2");
+                        j++;
+                    }
+
+                    else
+                    {
+                        Console.Write(" X");
+                    }
+                }
+            }            
+        }
+        /// <summary>
+        /// Прорисовка трехклеточных кораблей
+        /// </summary>
+        private static void ThirdArea()
+        {
+            for (int i = 0; i <= 9; i++)
+            {
+                for (int j = 0; j <= 9; j++)
+                {
+                    if (j == 6 && i == 9)
+                    {
+                        Console.Write(" 3");
+                        Console.Write(" 3");
+                        Console.Write(" 3");
+                        j += 2;
+                    }
+                    else if (j == 0 && i == 0)
+                    {
+                        Console.Write(" 3");
+                        Console.Write(" 3");
+                        Console.Write(" 3");
+                        j += 2;
+                    }
+                    else
+                    {
+                        Console.Write(" X");
+                    }
+                }
+            }
+        }
+        /// <summary>
+        /// Прорисовка четырехклеточных кораблей
+        /// </summary>
+        private static void FourArea()
+        {
+            for (int i = 0; i <= 9; i++)
+            {
+                for (int j = 0; j <= 9; j++)
+                {
+
+                    if (j == 2 && i == 3)
+                    {
+                        Console.Write(" 4");
+                        Console.Write(" 4");
+                        Console.Write(" 4");
+                        Console.Write(" 4");
+                        j += 3;
+                    }
+                    else
+                    {
+                        Console.Write(" X");
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// Написать программу поиска четырехзначного числа, которое при делении на 133 дает в остатке 125, 
+        /// а при делении на 134 дает в остатке 111. Ответ: 1987. 
+        /// </summary>
+        static void EightAppTask()
+        {
+            for (int i = 1000; i < 10000; i++)
+            {
+                if (i % 133 == 125 && i % 134 == 111)
+                {
+                    Console.WriteLine(i);
+                }
+            }
+        }
+        
     }
 }
- 
