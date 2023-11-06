@@ -47,8 +47,16 @@ namespace ConsoleAppCyclesWithIncrements
                 {
                     EightAppTask();
                 }
+                if (result == 9)
+                {
+                    NineAppTask();
+                }
+                if(result == 10)
+                {
+                    TenAppTask();
+                }
             }
-            else
+                else
             {
                 Console.WriteLine("Номер задачи не введен!"); 
             }
@@ -194,10 +202,12 @@ namespace ConsoleAppCyclesWithIncrements
         /// </summary>
         static void SevenAppTask()
         {
-            OneArea();
-            TwoArea();
-            ThirdArea();
-            FourArea();      
+            { 
+                OneArea();
+                TwoArea();
+                ThirdArea();
+                FourArea();                                                    
+            }
         }
         /// <summary>
         /// Прорисовка одноклеточных кораблей
@@ -259,12 +269,12 @@ namespace ConsoleAppCyclesWithIncrements
                         Console.Write(" 2");
                         j++;
                     }
-
                     else
                     {
                         Console.Write(" X");
                     }
                 }
+                Console.WriteLine();
             }            
         }
         /// <summary>
@@ -295,6 +305,7 @@ namespace ConsoleAppCyclesWithIncrements
                         Console.Write(" X");
                     }
                 }
+                Console.WriteLine();
             }
         }
         /// <summary>
@@ -306,7 +317,6 @@ namespace ConsoleAppCyclesWithIncrements
             {
                 for (int j = 0; j <= 9; j++)
                 {
-
                     if (j == 2 && i == 3)
                     {
                         Console.Write(" 4");
@@ -319,10 +329,11 @@ namespace ConsoleAppCyclesWithIncrements
                     {
                         Console.Write(" X");
                     }
-                }
-            }
-        }
 
+                }
+                Console.WriteLine();
+            }
+        }    
         /// <summary>
         /// Написать программу поиска четырехзначного числа, которое при делении на 133 дает в остатке 125, 
         /// а при делении на 134 дает в остатке 111. Ответ: 1987. 
@@ -337,6 +348,43 @@ namespace ConsoleAppCyclesWithIncrements
                 }
             }
         }
+        /// <summary>
+        /// Найти сумму положительных нечетных чисел, меньших 100. 
+        /// </summary>
+        static void NineAppTask()
+        {
+            int k = 0;
+
+            for (int i = 1; i <= 100; i++)
+            {
+                if (i % 2 == 1)
+                {
+                    k += i;
+                }
+            }
+            Console.WriteLine("Cумма положительных нечетных чисел равна: {0}", k);            
         
+        }
+        /// <summary>
+        ///  Найти сумму целых положительных чисел из промежутка от A до B, кратных 4 (значения переменных A и B вводятся с клавиатуры). 
+        /// </summary>
+        static void TenAppTask()
+        {
+            int count = 0;
+            Console.Write("Введите первое число промежутка: ");
+            int firstNumber=int.Parse(Console.ReadLine());
+            
+            Console.Write("Введите последнее число промежутка: ");
+            int lastNumber = int.Parse(Console.ReadLine());
+
+            for (int i = firstNumber ;  i <= lastNumber; i++)
+            {
+                if (i % 4 == 0)
+                {
+                    count+=i;
+                }
+            }
+            Console.WriteLine(count);
+        }
     }
 }
