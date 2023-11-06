@@ -66,7 +66,6 @@ namespace ConsoleAppCyclesWithIncrements
             }
             Console.ReadLine();
         }
-
         /// <summary>
         /// Составить программу возведения натурального числа в квадрат, используя следующую закономерность: 
         /// 1 в квадрате = 1
@@ -89,7 +88,6 @@ namespace ConsoleAppCyclesWithIncrements
             }
             Console.WriteLine(increment);
         }
-
         /// <summary>
         /// Определить количество трехзначных натуральных чисел, сумма цифр которых равна заданному числу N.
         /// </summary>
@@ -119,7 +117,6 @@ namespace ConsoleAppCyclesWithIncrements
 
 
         }
-
         /// <summary>
         /// Составить программу вычисления суммы кубов чисел от 25 до 125. 
         /// </summary>
@@ -133,7 +130,6 @@ namespace ConsoleAppCyclesWithIncrements
             }
             Console.WriteLine(result);
         }
-
         /// <summary>
         /// Среди двузначных чисел найти те, сумма квадратов цифр которых делится на 13. 
         /// </summary>
@@ -152,7 +148,6 @@ namespace ConsoleAppCyclesWithIncrements
             }
             
         }
-
         /// Написать программу поиска двузначных чисел, таких, что если к сумме цифр этого числа прибавить
         /// квадрат этой суммы, то получится это число.
         static void FiveAppTask()
@@ -171,7 +166,6 @@ namespace ConsoleAppCyclesWithIncrements
             }
 
         }
-
         /// <summary>
         /// Квадрат трехзначного числа оканчивается тремя цифрами, которые как раз и составляют это число
         /// </summary>
@@ -200,23 +194,10 @@ namespace ConsoleAppCyclesWithIncrements
                 }
             }
         }
-
         /// <summary>
         /// Составьте поле для игры в морской бой.
         /// </summary>
         static void SevenAppTask()
-        {
-            { 
-                OneArea();
-                TwoArea();
-                ThirdArea();
-                FourArea();                                                    
-            }
-        }
-        /// <summary>
-        /// Прорисовка одноклеточных кораблей
-        /// </summary>
-        private static void OneArea()
         {
             for (int i = 0; i <= 9; i++)
             {
@@ -238,24 +219,8 @@ namespace ConsoleAppCyclesWithIncrements
                     {
                         Console.Write(" 1");
                     }
-                    else
-                    {
-                        Console.Write(" X");
-                    }
-                }
-                Console.WriteLine();
-            }
-        }
-        /// <summary>
-        /// Прорисовка двухклеточных кораблей
-        /// </summary>
-        private static void TwoArea()
-        {
-            for (int i = 0; i <= 9; i++)
-            {
-                for (int j = 0; j <= 9; j++)
-                {
-                    if (j == 7 && i == 7)
+
+                    else if (j == 7 && i == 7)
                     {
                         Console.Write(" 2");
                         Console.Write(" 2");
@@ -273,24 +238,7 @@ namespace ConsoleAppCyclesWithIncrements
                         Console.Write(" 2");
                         j++;
                     }
-                    else
-                    {
-                        Console.Write(" X");
-                    }
-                }
-                Console.WriteLine();
-            }            
-        }
-        /// <summary>
-        /// Прорисовка трехклеточных кораблей
-        /// </summary>
-        private static void ThirdArea()
-        {
-            for (int i = 0; i <= 9; i++)
-            {
-                for (int j = 0; j <= 9; j++)
-                {
-                    if (j == 6 && i == 9)
+                    else if (j == 6 && i == 9)
                     {
                         Console.Write(" 3");
                         Console.Write(" 3");
@@ -304,24 +252,7 @@ namespace ConsoleAppCyclesWithIncrements
                         Console.Write(" 3");
                         j += 2;
                     }
-                    else
-                    {
-                        Console.Write(" X");
-                    }
-                }
-                Console.WriteLine();
-            }
-        }
-        /// <summary>
-        /// Прорисовка четырехклеточных кораблей
-        /// </summary>
-        private static void FourArea()
-        {
-            for (int i = 0; i <= 9; i++)
-            {
-                for (int j = 0; j <= 9; j++)
-                {
-                    if (j == 2 && i == 3)
+                    else if (j == 2 && i == 3)
                     {
                         Console.Write(" 4");
                         Console.Write(" 4");
