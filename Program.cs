@@ -55,6 +55,10 @@ namespace ConsoleAppCyclesWithIncrements
                 {
                     TenAppTask();
                 }
+                if (result == 11)
+                {
+                    ElevenAppTask();
+                }
             }
                 else
             {
@@ -381,10 +385,26 @@ namespace ConsoleAppCyclesWithIncrements
             {
                 if (i % 4 == 0)
                 {
-                    count+=i;
+                    count += i;
                 }
             }
             Console.WriteLine(count);
+        }
+        /// <summary>
+        /// Найти сумму целых положительных чисел, больших 20, меньших 100, кратных 3 и заканчивающихся на 2, 4 или 8. 
+        /// </summary>
+        static void ElevenAppTask()
+        {
+            int count = 0;
+            for (int i = 21; i <= 99; i++)
+            {
+                if (i % 3 == 0 && i % 2 == 0)
+                {
+                    count += i;
+                }
+            }
+            Console.WriteLine(count);
+
         }
     }
 }
